@@ -1028,3 +1028,4 @@ function Admin(props) {
     </div>
   );
   }
+export default Admin;
