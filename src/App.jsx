@@ -138,7 +138,11 @@ function Select(props) {
 }
 
 export default function EMABApp() {
-  const [tab, setTab] = useState("accueil");
+  const const [tab, setTab] = useState(
+  typeof window !== "undefined" && window.location.hash.includes("type=recovery")
+    ? "compte"
+    : "accueil"
+);
   const [menuOpen, setMenuOpen] = useState(false);
 
   // ---- search ----
