@@ -147,4 +147,24 @@ export default function Compte() {
         />
 
         <label>Mot de passe</label>
-        <inpu
+        <input
+  type="password"
+  value={motDePasse}
+  onChange={(e) => setMotDePasse(e.target.value)}
+  style={{ width: "100%", padding: "0.75rem", marginBottom: "1rem" }}
+/>
+
+{erreur && <div style={{ color: "red", marginBottom: "1rem" }}>{erreur}</div>}
+{succes && <div style={{ color: "green", marginBottom: "1rem" }}>{succes}</div>}
+
+<button
+  type="submit"
+  disabled={loading}
+  style={{ width: "100%", padding: "0.9rem", background: "#1e2a4a", color: "#fff", border: "none" }}
+>
+  {loading ? "Veuillez patienter..." : mode === "connexion" ? "Se connecter" : "Créer mon compte"}
+</button>
+</form>
+</div>
+);
+}
