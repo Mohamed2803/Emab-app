@@ -138,7 +138,7 @@ function Select(props) {
 }
 
 export default function EMABApp() {
-  const const [tab, setTab] = useState(
+  const [tab, setTab] = useState(
   typeof window !== "undefined" && window.location.hash.includes("type=recovery")
     ? "compte"
     : "accueil"
