@@ -89,6 +89,7 @@ export default function Compte({ setTab }) {
       const { error } = await supabase.auth.signInWithPassword({ email, password: motDePasse });
       if (error) throw error;
       setSucces("Connexion réussie !");
+setTab("accueil");
     } catch (err) {
       setErreur("Email ou mot de passe incorrect.");
     } finally {
