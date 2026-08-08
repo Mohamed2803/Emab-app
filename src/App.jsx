@@ -1,3 +1,4 @@
+import Compte from "./Compte";
 import React, { useState, useEffect, useCallback } from "react";
 import {
   Search,
@@ -366,14 +367,14 @@ export default function EMABApp() {
       setInscriptions(list.slice().reverse());
     } catch {}
   }
-
-  const navItems = [
-    { id: "accueil", label: "Accueil" },
-    { id: "resultats", label: "Résultats" },
-    { id: "inscription", label: "Inscription" },
-    { id: "apropos", label: "À propos" },
-    { id: "admin", label: "Espace école" },
-  ];
+   const navItems = [
+  { id: "accueil", label: "Accueil" },
+  { id: "resultats", label: "Résultats" },
+  { id: "inscription", label: "Inscription" },
+  { id: "compte", label: "Mon compte" },
+  { id: "apropos", label: "À propos" },
+  { id: "admin", label: "Espace école" },
+];
 
   return (
     <div style={{ background: PAPER, minHeight: "100vh", fontFamily: FONT_BODY, color: INK }}>
@@ -478,6 +479,7 @@ export default function EMABApp() {
           />
         )}
         {tab === "apropos" && <APropos />}
+{tab === "compte" && <Compte />}
         {tab === "admin" && (
           <Admin
             session={session}
